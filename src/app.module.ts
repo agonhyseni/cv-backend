@@ -10,7 +10,7 @@ console.log('__dirname', __dirname);
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.POSTGRES_URL,
+      url: process.env.DATABASE_URL,
       entities: [__dirname + '/**/*.entity.{js,ts}'],
       synchronize: true,
     }),
