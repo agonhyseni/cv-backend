@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ContactModule } from './modules/contact/contact.module';
 import { EducationModule } from './modules/education/education.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { SkillModule } from './modules/skill/skill.module';
 import { WorkExperienceModule } from './modules/work-experience/work-experience.module';
 
-console.log('__dirname', __dirname);
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -18,6 +18,7 @@ console.log('__dirname', __dirname);
     EducationModule,
     WorkExperienceModule,
     SkillModule,
+    ContactModule,
   ],
   controllers: [],
   providers: [],
