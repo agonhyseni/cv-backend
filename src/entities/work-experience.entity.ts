@@ -27,7 +27,7 @@ export class WorkExperience extends BaseEntity {
   @ApiProperty()
   country: string;
 
-  @Column({ type: 'varchar', array: true, default: [] })
+  @Column({ type: 'varchar', array: true, default: null })
   @ApiPropertyOptional()
   projects: string[];
 
