@@ -21,7 +21,6 @@ export class ContactController {
   async createContacts(
     @Body(ValidationPipe) sendEmailDto: SendEmailDto,
   ): Promise<void> {
-    const response = await this.contactService.sendEmail(sendEmailDto);
-    console.log(response);
+    await this.contactService.sendEmail(sendEmailDto);
   }
 }

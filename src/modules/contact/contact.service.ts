@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ClientResponse } from '@sendgrid/client/src/response';
 import { Contact } from 'src/entities/contact.entity';
 import { ContactRepository } from './contact.repository';
 import { SendEmailDto } from './dto/send-email-dto';
@@ -24,12 +23,11 @@ export class ContactService {
     return contact;
   }
 
-  async sendEmail(sendEmailDto: SendEmailDto): Promise<[ClientResponse, any]> {
-    const response = await this.sgMail.send({
+  async sendEmail(sendEmailDto: SendEmailDto): Promise<void> {
+    await this.sgMail.send({
       ...sendEmailDto,
       from: process.env.SENDGRID_EMAIL,
       to: process.env.SENDGRID_EMAIL,
     });
-    return response;
   }
 }
