@@ -1,4 +1,3 @@
-// placeholder values
 export enum SkillExperience {
   BASE = 'base',
   BEGINNER = 'beginner',
