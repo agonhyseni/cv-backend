@@ -20,15 +20,6 @@ export class Profile extends BaseEntity {
   @Column({ type: 'varchar', length: 50 })
   country: string;
 
-  @Column({ type: 'varchar', length: 50 })
-  email: string;
-
-  @Column({ type: 'varchar', length: 20 })
-  phone: string;
-
-  @Column({ type: 'varchar', length: 250 })
-  linkedin: string;
-
   @Column({ type: 'varchar', length: 250 })
   github: string;
 }
