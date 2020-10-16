@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, ValidationPipe } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { Contact } from 'src/entities/Contact.entity';
+import { Contact } from 'src/entities/contact.entity';
 import { ContactService } from './contact.service';
 import { SendEmailDto } from './dto/send-email-dto';
 
