@@ -27,8 +27,8 @@ export class ContactService {
   async sendEmail(sendEmailDto: SendEmailDto): Promise<[ClientResponse, any]> {
     const response = await this.sgMail.send({
       ...sendEmailDto,
-      from: 'hyseniagon@gmail.com',
-      to: 'hyseniagon@gmail.com',
+      from: process.env.SENDGRID_EMAIL,
+      to: process.env.SENDGRID_EMAIL,
     });
     return response;
   }
