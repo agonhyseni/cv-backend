@@ -25,9 +25,26 @@ export class ContactService {
 
   async sendEmail(sendEmailDto: SendEmailDto): Promise<void> {
     await this.sgMail.send({
-      ...sendEmailDto,
+      subject: sendEmailDto.subject,
+      text: `${sendEmailDto.text} FROM:${sendEmailDto.from}`,
       from: process.env.SENDGRID_EMAIL,
       to: process.env.SENDGRID_EMAIL,
+    });
+
+    await this.sgMail.send({
+      subject: `Email sent to: ${process.env.SENDGRID_EMAIL}`,
+      text: `
+        Hello,
+        
+        Hope you are staying positive and testing negative!
+        
+        Thank you for contacting me! I will come back to you as soon as possible. 
+
+        Kind regards,
+        
+        Agon Hyseni`,
+      from: process.env.SENDGRID_EMAIL,
+      to: sendEmailDto.from,
     });
   }
 }
