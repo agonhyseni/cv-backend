@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const options = new DocumentBuilder()
-    .setTitle('Agon Hyseni - CV')
+    .setTitle(`${process.env.FIRSTNAME} ${process.env.LASTNAME} - CV`)
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);

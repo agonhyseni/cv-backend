@@ -41,8 +41,8 @@ export class ContactService {
         Thank you for contacting me! I will come back to you as soon as possible. 
 
         Kind regards,
-        
-        Agon Hyseni`,
+
+        ${process.env.FIRSTNAME} ${process.env.LASTNAME}`,
       from: process.env.SENDGRID_EMAIL,
       to: sendEmailDto.from,
     });
