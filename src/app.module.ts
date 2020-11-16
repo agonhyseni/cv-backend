@@ -23,4 +23,4 @@ import { WorkExperienceModule } from './modules/work-experience/work-experience.
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
