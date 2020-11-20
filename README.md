@@ -1,5 +1,7 @@
 # CV Backend
 
+This project can be used to create your CV using Swagger UI
+
 ## Installation
 
 ```bash
