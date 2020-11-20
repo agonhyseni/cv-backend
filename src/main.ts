@@ -4,12 +4,14 @@ dotenv.config();
 
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import * as morgan from 'morgan';
 // import * as helmet from 'helmet';
 // import * as rateLimit from 'express-rate-limit';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(morgan('combined'));
   // app.use(helmet());
   // app.enableCors({
   //   maxAge: 3600,
