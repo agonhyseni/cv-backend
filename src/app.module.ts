@@ -6,15 +6,12 @@ import { ProfileModule } from './modules/profile/profile.module';
 import { SkillModule } from './modules/skill/skill.module';
 import { WorkExperienceModule } from './modules/work-experience/work-experience.module';
 
+console.log(process.env);
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DATABASE_HOST,
-      port: parseInt(process.env.DATABASE_PORT),
-      username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-      database: process.env.DATABASE_DB,
+      url: process.env.POSTGRES_URL,
       entities: [__dirname + '/**/*.entity.{js,ts}'],
       synchronize: false,
     }),
@@ -27,4 +24,4 @@ import { WorkExperienceModule } from './modules/work-experience/work-experience.
   controllers: [],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {}
