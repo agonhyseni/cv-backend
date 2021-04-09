@@ -12,6 +12,7 @@ console.log(process.env);
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
+      ssl: true,
       entities: [__dirname + '/**/*.entity.{js,ts}'],
       synchronize: false,
     }),
